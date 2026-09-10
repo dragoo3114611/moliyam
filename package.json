@@ -33,8 +33,7 @@
         { "target": "nsis", "arch": ["x64"] },
         { "target": "portable", "arch": ["x64"] }
       ],
-      "icon": "icon.ico",
-      "artifactName": "Moliyam-${version}-${target}.${ext}"
+      "icon": "icon.ico"
     },
     "nsis": {
       "oneClick": false,
@@ -44,10 +43,11 @@
       "createStartMenuShortcut": true,
       "shortcutName": "Moliyam",
       "installerLanguages": ["en_US"],
-      "deleteAppDataOnUninstall": false
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "Moliyam-${version}-setup.${ext}"
     },
     "portable": {
-      "artifactName": "Moliyam-${version}-portable.exe"
+      "artifactName": "Moliyam-${version}-portable.${ext}"
     }
   }
 }
