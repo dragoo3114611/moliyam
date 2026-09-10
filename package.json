@@ -1,0 +1,53 @@
+{
+  "name": "moliyam",
+  "productName": "Moliyam",
+  "version": "1.0.0",
+  "description": "Moliyam — shaxsiy moliya nazorati (oflayn Windows ilovasi)",
+  "main": "main.js",
+  "author": "Moliyam",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "31.7.7",
+    "electron-builder": "24.13.3"
+  },
+  "build": {
+    "appId": "uz.moliyam.app",
+    "productName": "Moliyam",
+    "copyright": "Moliyam",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "icon.ico",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "icon.ico",
+      "artifactName": "Moliyam-${version}-${target}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Moliyam",
+      "installerLanguages": ["en_US"],
+      "deleteAppDataOnUninstall": false
+    },
+    "portable": {
+      "artifactName": "Moliyam-${version}-portable.exe"
+    }
+  }
+}
